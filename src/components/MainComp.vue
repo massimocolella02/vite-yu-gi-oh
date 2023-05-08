@@ -1,22 +1,28 @@
 <template>
     <div class="container bg-white py-4">
         <div class="counter text-white p-2">
-            <span>Sono state trovate 20 carte</span>
+            <span>Sono state trovate {{ store.arrayCardsApi.length }} carte</span>
         </div>
         <div class="cards">
-            <SingolaCard/>
+            <SingolaCard v-for="(element, index) in store.arrayCardsApi" :key="index" :deattaglicarte="element"/>
         </div>
     </div>
 </template>
 
 <script>
 import SingolaCard from './SingolaCard.vue'
+import { store } from "../store";
 
 export default{
     name: 'MainComp',
     components:{
         SingolaCard
-    }
+    },
+    data() {
+        return {
+            store
+        }
+    },
 }
 </script>
 
@@ -27,8 +33,7 @@ export default{
     .cards{
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
-    .card{
-        width: calc(100% / 5 - 10px);
-    }
+
 </style>

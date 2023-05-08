@@ -21,8 +21,7 @@ export default{
   methods: {
     callApi(){
       axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0').then(res =>{
-        const variabile = res.data.data;
-        this.store.arrayCardsApi = variabile;
+        this.store.arrayCardsApi = res.data.data;
       })
     }
   },
