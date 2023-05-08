@@ -1,3 +1,10 @@
+<script>
+    export default{
+        name: 'SingolaCard',
+        props: ['deattaglicarte']
+    }
+</script>
+
 <template>
     <div class="card">
         <img :src="deattaglicarte.card_images[0].image_url" class="card-img-top" alt="...">
@@ -7,13 +14,6 @@
         </div>
     </div>
 </template>
-
-<script>
-    export default{
-        name: 'SingolaCard',
-        props: ['deattaglicarte']
-    }
-</script>
 
 <style scoped>
     .card{

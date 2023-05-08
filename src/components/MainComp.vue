@@ -1,3 +1,22 @@
+<script>
+import SingolaCard from './SingolaCard.vue'
+import { store } from "../store";
+import SelectComp from './SelectComp.vue'
+
+export default{
+    name: 'MainComp',
+    components:{
+        SingolaCard,
+        SelectComp
+    },
+    data() {
+        return {
+            store
+        }
+    },
+}
+</script>
+
 <template>
     <div class="container bg-white py-4">
         <div class="counter text-white p-2">
@@ -9,22 +28,6 @@
     </div>
 </template>
 
-<script>
-import SingolaCard from './SingolaCard.vue'
-import { store } from "../store";
-
-export default{
-    name: 'MainComp',
-    components:{
-        SingolaCard
-    },
-    data() {
-        return {
-            store
-        }
-    },
-}
-</script>
 
 <style scoped>
     .counter{
